@@ -1,53 +1,65 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
+import { auth } from "./firebase.js";
 
 import {
-getAuth,
-signInWithEmailAndPassword
+signInWithEmailAndPassword,
+onAuthStateChanged
 } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
 
-const firebaseConfig = {
-apiKey: "AIzaSyAAMK_YHlL6mzFnF0ri93EZQOCzSrJex8o",
-authDomain: "sankalpa-siddhi-temple.firebaseapp.com",
-projectId: "sankalpa-siddhi-temple",
-storageBucket: "sankalpa-siddhi-temple.firebasestorage.app",
-messagingSenderId: "442692965033",
-appId: "1:442692965033:web:27a42cf94873ae37950fb8"
-};
-
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-
+const email = document.getElementById("email");
+const password = document.getElementById("password");
 const loginBtn = document.getElementById("loginBtn");
-const status = document.getElementById("status");
+const message = document.getElementById("message");
 
-loginBtn.addEventListener("click", function () {
+if(loginBtn){
 
-const email = document.getElementById("email").value.trim();
-const password = document.getElementById("password").value.trim();
+loginBtn.addEventListener("click",()=>{
 
-if(email === "" || password === ""){
-status.innerHTML = "Please enter email and password";
+const userEmail = email.value.trim();
+const userPassword = password.value.trim();
+
+if(userEmail==="" || userPassword===""){
+message.style.color="red";
+message.innerHTML="Please enter email and password";
 return;
 }
 
-status.innerHTML = "Logging in...";
+message.style.color="blue";
+message.innerHTML="Please wait...";
 
-signInWithEmailAndPassword(auth, email, password)
-.then(() => {
+signInWithEmailAndPassword(auth,userEmail,userPassword)
 
-status.style.color = "green";
-status.innerHTML = "Login Successful";
+.then(()=>{
 
-setTimeout(function(){
-window.location.href = "dashboard.html";
+message.style.color="green";
+message.innerHTML="Login Successful";
+
+setTimeout(()=>{
+window.location.href="dashboard.html";
 },1000);
 
 })
+
 .catch((error)=>{
 
-status.style.color = "red";
-status.innerHTML = error.message;
+message.style.color="red";
+message.innerHTML=error.message;
 
 });
+
+});
+
+}
+
+onAuthStateChanged(auth,(user)=>{
+
+if(user){
+
+console.log("Logged In");
+
+}else{
+
+console.log("Not Logged In");
+
+}
 
 });
