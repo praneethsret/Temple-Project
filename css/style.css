@@ -1,122 +1,373 @@
+/* ===========================
+   SANKALPA SIDDHI TEMPLE ERP
+   Premium Theme
+=========================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial,Helvetica,sans-serif;
+font-family:'Poppins',sans-serif;
 }
 
 body{
-background:#f4f6f9;
+
+background:url("https://images.unsplash.com/photo-1605647540924-852290f6b0d5?auto=format&fit=crop&w=1200&q=80");
+
+background-size:cover;
+
+background-position:center;
+
+background-repeat:no-repeat;
+
 min-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
+
 }
 
-.login-container{
+.overlay{
+
+position:fixed;
+
+left:0;
+
+top:0;
+
 width:100%;
-padding:20px;
+
+height:100%;
+
+background:rgba(0,0,0,.55);
+
+backdrop-filter:blur(3px);
+
+z-index:1;
+
+}
+
+.login-page{
+
 display:flex;
+
 justify-content:center;
+
 align-items:center;
+
+padding:20px;
+
 }
 
 .login-card{
+
+position:relative;
+
+z-index:2;
+
 width:100%;
+
 max-width:420px;
-background:#ffffff;
-border-radius:20px;
-padding:30px;
-box-shadow:0 10px 30px rgba(0,0,0,.15);
-text-align:center;
+
+background:rgba(255,255,255,.16);
+
+backdrop-filter:blur(18px);
+
+border:1px solid rgba(255,255,255,.25);
+
+border-radius:28px;
+
+padding:35px;
+
+box-shadow:0 15px 40px rgba(0,0,0,.35);
+
+animation:fadeUp .8s ease;
+
 }
 
-.temple-logo{
-font-size:60px;
-margin-bottom:10px;
+.logo{
+
+font-size:65px;
+
+text-align:center;
+
+margin-bottom:12px;
+
 }
 
 .login-card h1{
-font-size:24px;
-color:#333;
-margin-bottom:10px;
+
+text-align:center;
+
+font-size:30px;
+
+color:#fff;
+
+font-weight:700;
+
 }
 
-.login-card p{
-color:#666;
-margin-bottom:20px;
-}
+.login-card h2{
 
-input{
-width:100%;
-padding:14px;
-margin:10px 0;
-border:1px solid #ccc;
-border-radius:10px;
-font-size:16px;
-outline:none;
-}
+text-align:center;
 
-input:focus{
-border-color:#ff9800;
-}
-
-button{
-width:100%;
-padding:15px;
-margin-top:15px;
-background:#ff9800;
-color:white;
-border:none;
-border-radius:10px;
 font-size:18px;
-font-weight:bold;
-cursor:pointer;
+
+font-weight:500;
+
+color:#FFD54F;
+
+margin-top:5px;
+
 }
 
-button:hover{
-background:#f57c00;
+.subtitle{
+
+text-align:center;
+
+color:#eee;
+
+margin-top:10px;
+
+margin-bottom:25px;
+
+font-size:15px;
+
+}
+
+.input-group{
+
+margin-bottom:18px;
+
+}
+
+.input-group label{
+
+display:block;
+
+color:#fff;
+
+margin-bottom:8px;
+
+font-size:14px;
+
+font-weight:500;
+
+}
+
+.input-group input{
+
+width:100%;
+
+padding:16px;
+
+border:none;
+
+outline:none;
+
+border-radius:14px;
+
+font-size:16px;
+
+background:rgba(255,255,255,.92);
+
+transition:.3s;
+
+}
+
+.input-group input:focus{
+
+transform:scale(1.02);
+
+box-shadow:0 0 15px rgba(255,193,7,.5);
+
+}
+
+#loginBtn{
+
+width:100%;
+
+padding:16px;
+
+border:none;
+
+border-radius:15px;
+
+background:linear-gradient(135deg,#FF9800,#FFB300);
+
+color:white;
+
+font-size:18px;
+
+font-weight:700;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+#loginBtn:hover{
+
+transform:translateY(-3px);
+
+box-shadow:0 10px 25px rgba(255,152,0,.4);
+
 }
 
 #message{
-margin-top:15px;
-font-weight:bold;
-color:red;
+
+margin-top:18px;
+
+text-align:center;
+
+color:#fff;
+
+font-weight:600;
+
+}
+
+.footer{
+
+margin-top:25px;
+
+text-align:center;
+
+color:#ddd;
+
+font-size:12px;
+
+line-height:22px;
+
+}
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(40px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
 }
 
 /* Dashboard */
 
 .dashboard{
-padding:20px;
+
+padding:18px;
+
+max-width:1200px;
+
+margin:auto;
+
 }
 
 .title{
-text-align:center;
+
+background:linear-gradient(135deg,#FF9800,#F57C00);
+
+padding:25px;
+
+border-radius:22px;
+
+color:white;
+
+box-shadow:0 10px 30px rgba(0,0,0,.25);
+
 margin-bottom:20px;
+
+}
+
+.title h2{
+
+font-size:24px;
+
+margin-top:10px;
+
 }
 
 .card{
+
 background:white;
+
+border-radius:20px;
+
 padding:20px;
-border-radius:15px;
-margin-bottom:15px;
-box-shadow:0 5px 15px rgba(0,0,0,.1);
+
+margin-bottom:18px;
+
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+transition:.3s;
+
+}
+
+.card:hover{
+
+transform:translateY(-4px);
+
 }
 
 .card h3{
-color:#666;
-margin-bottom:8px;
+
+font-size:15px;
+
+color:#777;
+
+margin-bottom:10px;
+
 }
 
 .amount{
-font-size:28px;
-font-weight:bold;
-color:#ff9800;
+
+font-size:34px;
+
+font-weight:700;
+
+color:#FF9800;
+
 }
 
 .menu-btn{
+
 width:100%;
-padding:15px;
-margin-top:10px;
-font-size:18px;
+
+padding:18px;
+
+border:none;
+
+border-radius:18px;
+
+margin-top:15px;
+
+background:linear-gradient(135deg,#FF9800,#FB8C00);
+
+color:white;
+
+font-size:17px;
+
+font-weight:700;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.menu-btn:hover{
+
+transform:translateY(-2px);
+
+box-shadow:0 10px 20px rgba(255,152,0,.3);
+
   }
