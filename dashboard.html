@@ -5,11 +5,13 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
 <title>Temple Dashboard</title>
 
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet"
+href="css/style.css">
 
 </head>
 
@@ -17,71 +19,108 @@
 
 <div class="dashboard">
 
+<div class="title">
+
 <h1>🛕</h1>
 
 <h2>Sankalpa Siddhi Maha Ganapathi Devalayam</h2>
 
-<p>Temple Management Dashboard</p>
-
-<div class="card">
-
-<h3>Total Collection</h3>
-
-<h2 id="collection">₹0</h2>
+<p>Temple Management System</p>
 
 </div>
 
 <div class="card">
 
-<h3>Total Expenses</h3>
+<h3>Today's Collection</h3>
 
-<h2 id="expenses">₹0</h2>
+<div class="amount" id="todayCollection">
+
+₹0
+
+</div>
 
 </div>
 
 <div class="card">
 
-<h3>Balance</h3>
+<h3>Today's Expenses</h3>
 
-<h2 id="balance">₹0</h2>
+<div class="amount" id="todayExpense">
+
+₹0
+
+</div>
 
 </div>
 
 <div class="card">
 
-<h3>Total Tickets</h3>
+<h3>Today's Balance</h3>
 
-<h2 id="tickets">0</h2>
+<div class="amount" id="todayBalance">
 
-</div>
-
-<button onclick="location.href='tickets.html'">
-
-🎟 Add Ticket
-
-</button>
-
-<button onclick="location.href='expenses.html'">
-
-💸 Add Expense
-
-</button>
-
-<button onclick="location.href='reports.html'">
-
-📊 Reports
-
-</button>
-
-<button id="logoutBtn">
-
-🚪 Logout
-
-</button>
+₹0
 
 </div>
 
-<script type="module" src="js/dashboard.js"></script>
+</div>
+
+<div class="card">
+
+<h3>Today's Tickets</h3>
+
+<div class="amount" id="todayTickets">
+
+0
+
+</div>
+
+</div>
+
+<button
+class="menu-btn"
+onclick="location.href='tickets.html'">
+
+🎟 QUICK TICKET
+
+</button>
+
+<button
+class="menu-btn"
+onclick="location.href='expenses.html'">
+
+💸 ADD EXPENSE
+
+</button>
+
+<button
+class="menu-btn"
+onclick="location.href='reports.html'">
+
+📊 REPORTS
+
+</button>
+
+<button
+class="menu-btn"
+onclick="location.href='users.html'">
+
+👥 STAFF
+
+</button>
+
+<button
+class="menu-btn"
+id="logoutBtn">
+
+🚪 LOGOUT
+
+</button>
+
+</div>
+
+<script type="module"
+src="js/dashboard.js"></script>
 
 </body>
 
